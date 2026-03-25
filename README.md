@@ -5,7 +5,8 @@
 # Study Summary
 
 The following is a summary of the RNA-Seq analysis of airway smooth
-muscle cells as reported by Himes et al. (2014). @ himes_rna_seq_2014
+muscle cells as reported by Himes et al. (2014).
+(**himes_rna_seq_2014?**)
 
 # Background & Objective
 
@@ -44,22 +45,9 @@ The analysis revealed a robust and consistent transcriptional shift
 across all four cell lines:
 
 Differential Expression: See the volcano below for a visualization of
-differentially expressed genes. ’’‘{r} library(dplyr) library(ggplot2)
-library(plotly)’’’ ’’’{r} \#\|echo: false
+differentially expressed genes.
 
-top2000 \<-
-read.csv(“https://gist.githubusercontent.com/johnsonra/121eb61bf4b09e4258b78e341b1819e9/raw/9d4d1650713378ce59e06a21b62f940433100a81/top_2000.csv”)
-
-# significance threshold
-
-     thresh <- 0.05
-
-top2000 \|\> mutate(nl10p = log10(padj), sig = padj \< thresh) \|\>
-ggplot(aes(log2FoldChange, nl10p, color = sig)) + geom_point(alpha =
-0.3) + scale_color_manual(values = c(“black”, “orange”)) +
-theme_minimal()+ labs(x = bquote (“Log”\[2\] ~ “Fold Change”), y =
-bquote(“-Log” \[10\] ~ “p”), color = paste (“Adjusted p \<”, thresh))
-’’’’
+![](README_files/figure-commonmark/unnamed-chunk-2-1.png)
 
 Identification of CRISPLD2: The most notable finding was the high
 induction of the gene CRISPLD2 (Cysteine-Rich Secretory Protein LCCL
